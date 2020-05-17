@@ -3,6 +3,12 @@ package jcolonia.daw2020.programas;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Clase que contiene el conjunto entero de clientes y los métodos relativos a dicho conjunto.
+ * 
+ * @author Simón Marc
+ *
+ */
 public class ConjuntoClientes {
 	ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 

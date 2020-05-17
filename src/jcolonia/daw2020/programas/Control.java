@@ -7,7 +7,10 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
- * @author Simon Marc
+ * Clase que controla las operaciones relativas al archivo que contiene los
+ * datos y tambien el método main con un menú
+ * 
+ * @author Simón Marc
  *
  */
 public class Control {
@@ -18,15 +21,9 @@ public class Control {
 	static ConjuntoClientes clientes = new ConjuntoClientes();
 
 	public static void main(String[] args) throws Exception {
-		agregar();
-		// clientes.agregar(entrada, cliente);
-		// clientes.mostrarTodo();
-		// escribir(clientes, archivo);
+		leerArchivo();
 		menu();
-		// leer
-		// borrar archivo
 		// todo que tiene que ver con el archivo
-		// menu ?
 	}
 
 	/**
@@ -70,7 +67,7 @@ public class Control {
 	/**
 	 * Añade al programa los datos del archivo
 	 */
-	public static void agregar() {
+	public static void leerArchivo() {
 		if (archivo.exists()) {
 			String linea;
 			try {
@@ -105,6 +102,13 @@ public class Control {
 		}
 	}
 
+	/**
+	 * El menú de la aplicación, pide al usuario elegir entre una de las opciones
+	 * ofrecidas, el usuario solo puede elegír entre una de las opciones ofrecidas,
+	 * según la opción elegida, el programa llama un método u otro.
+	 * 
+	 * @throws IOException
+	 */
 	public static void menu() throws Exception {
 		int caso = 0;
 		int caso_salir = 5;
@@ -114,15 +118,17 @@ public class Control {
 
 			System.out.println();
 			System.out.println("Elíje una de las opciones: ");
+			System.out.println();
 			System.out.println("1) Añadir un cliente nuevo");
 			System.out.println("2) Ver datos");
 			System.out.println("3) Eliminar un cliente");
 			System.out.println("4) Eliminar todos los datos");
 			System.out.println("5) Salir del programa");
 			System.out.println();
+			menu = entrada.nextLine();
 
 			try {
-				if (cliente.entradaValida("menu", entrada.nextLine())) {
+				if (cliente.entradaValida("menu", menu)) {
 					caso = Integer.parseInt(menu);
 				} else {
 					throw new Exception("\nSolo numeros del 1 a 5");
@@ -133,23 +139,26 @@ public class Control {
 
 			switch (caso) {
 
-				case 1:
+			case 1:
+				try {
 					clientes.agregar(entrada, cliente);
-					break;
+				} catch (Exception e) {
+					System.err.println(e.getMessage());
+				}
+				break;
+			case 2:
+				clientes.mostrarTodo();
+				break;
 
-				case 2:
-					clientes.mostrarTodo();
-					break;
-
-				case 3:
-					break;
-				case 4:
-					vaciar(clientes, archivo);
-					break;
-				case 5:
-					escribir(clientes, archivo);
-					System.exit(0);
-					break;
+			case 3:
+				break;
+			case 4:
+				vaciar(clientes, archivo);
+				break;
+			case 5:
+				escribir(clientes, archivo);
+				System.exit(0);
+				break;
 
 			}
 
