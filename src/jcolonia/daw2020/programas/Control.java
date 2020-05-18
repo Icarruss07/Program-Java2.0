@@ -37,11 +37,11 @@ public class Control {
 		FileWriter escribir = new FileWriter(archivo);
 		if (archivo.exists()) {
 			for (int i = 0; i < clientes.clientes.size(); i++) {
-				escribir.append(clientes.clientes.get(i).prepararTextoArchivo() + "\n");
+				escribir.append(clientes.listar(i) + "\n");
 			}
 		} else {
 			for (int i = 0; i < clientes.clientes.size(); i++) {
-				escribir.write(clientes.clientes.get(i).prepararTextoArchivo() + "\n");
+				escribir.write(clientes.listar(i) + "\n");
 			}
 		}
 		escribir.flush();
@@ -102,6 +102,20 @@ public class Control {
 		}
 	}
 
+	public static void eliminarCliente() {
+		
+		String parametro = "";
+		System.out.print("Introduce el DNI o el nombre del cliente que desea eliminar : ");
+		parametro = entrada.nextLine();
+		
+		if ( cliente.entradaValida("dni", parametro) || cliente.entradaValida("nombre", parametro) ) {
+			if( clientes.eliminar(parametro) ) {
+				System.out.println("Cliente eliminado con éxito!");
+			}
+		}
+		
+	}
+	
 	/**
 	 * El menú de la aplicación, pide al usuario elegir entre una de las opciones
 	 * ofrecidas, el usuario solo puede elegír entre una de las opciones ofrecidas,
@@ -149,8 +163,8 @@ public class Control {
 			case 2:
 				clientes.mostrarTodo();
 				break;
-
 			case 3:
+				eliminarCliente();
 				break;
 			case 4:
 				vaciar(clientes, archivo);
