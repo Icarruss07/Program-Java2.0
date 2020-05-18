@@ -101,8 +101,9 @@ public class Cliente {
 	 */
 	@Override
 	public String toString() {
-		return "| " + nombre + " | " + apellido + " | " + dni + " | " + domicilio + " | " + edad + " | " + telefono
-				+ " | ";
+		String cadena;
+		cadena=String.format("| %-40.40s | %-40.40s | %-40.40s | %-40.40s | %-40.40d | %-40.40d |", nombre, apellido, dni, domicilio, edad, telefono);
+		return cadena;
 	}
 
 	/**
