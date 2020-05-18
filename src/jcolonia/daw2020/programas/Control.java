@@ -103,19 +103,17 @@ public class Control {
 	}
 
 	public static void eliminarCliente() {
-		
+
 		String parametro = "";
-		System.out.print("Introduce el DNI o el nombre del cliente que desea eliminar : ");
+		System.out.print("Introduce el DNI del cliente que desea eliminar : ");
 		parametro = entrada.nextLine();
-		
-		if ( cliente.entradaValida("dni", parametro) || cliente.entradaValida("nombre", parametro) ) {
-			if( clientes.eliminar(parametro) ) {
-				System.out.println("Cliente eliminado con éxito!");
-			}
+
+		if (cliente.entradaValida("dni", parametro)) {
+			clientes.eliminar(parametro);
 		}
-		
+
 	}
-	
+
 	/**
 	 * El menú de la aplicación, pide al usuario elegir entre una de las opciones
 	 * ofrecidas, el usuario solo puede elegír entre una de las opciones ofrecidas,
@@ -131,7 +129,7 @@ public class Control {
 			String menu = "";
 
 			System.out.println();
-			System.out.println("Elíje una de las opciones: ");
+			System.out.println("Elige una de las opciones: ");
 			System.out.println();
 			System.out.println("1) Añadir un cliente nuevo");
 			System.out.println("2) Ver datos");
