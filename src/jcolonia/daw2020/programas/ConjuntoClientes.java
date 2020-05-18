@@ -44,36 +44,29 @@ public class ConjuntoClientes {
 	}
 
 	/**
-	 * Construye una cadena de texto con los datos del cliente que se encuentra en
-	 * la posición indicada
+	 * Facilita una cadena de texto con los datos del cliente que se encuentra en
+	 * la posición indicada.
 	 * 
-	 * @param cliente La posición del cliente en la lista de clientes
+	 * @param numCliente La posición del cliente en la lista de clientes
 	 * @return Una cadena de texto preparada para ser escrita en el archivo con los
 	 *         datos de ese cliente
 	 */
-	public String listar(int cliente) {
-		return clientes.get(cliente).prepararTextoArchivo();
+	public String listar(int numCliente) {
+		return clientes.get(numCliente).prepararTextoArchivo();
 	}
 
 	/**
 	 * Busca en la lista de clientes el dato indicado, si lo encuentra elimina ese
-	 * cliente
+	 * cliente.
 	 * 
-	 * @param parametro El DNI o el nombre del cliente buscado
-	 * @return Devuelve true si el tamaño de la lista de clientes ha cambiado
+	 * @param parametro El DNI del cliente buscado
 	 */
-	public Boolean eliminar(String parametro) {
-		boolean eliminado = false;
-		int antes = clientes.size();
+	public void eliminar(String dni) {
 		for (int i = 0; i < clientes.size(); i++) {
-			if (clientes.get(i).getDni() == parametro || clientes.get(i).getNombre() == parametro) {
+			if (clientes.get(i).getDni().compareToIgnoreCase(dni) == 0) {
 				clientes.remove(i);
+				break;
 			}
 		}
-		int despues = clientes.size();
-		if (antes != despues) {
-			eliminado = false;
-		}
-		return eliminado;
 	}
 }
