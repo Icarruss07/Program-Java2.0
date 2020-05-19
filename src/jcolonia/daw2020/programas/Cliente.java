@@ -4,7 +4,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Clase que contiene los datos de un cliente y los métodos relativos a dichos datos.
+ * Clase que contiene los datos de un cliente y los métodos relativos a dichos
+ * datos.
  * 
  * @author Simón Marc
  *
@@ -16,7 +17,7 @@ public class Cliente {
 	private String domicilio = "";
 	private int edad = 0;
 	private int telefono = 0;
-	public String[] campos = { "nombre", "apellido", "dni", "domicilio", "edad", "telefono" };
+	public static String[] campos = { "nombre", "apellido", "dni", "domicilio", "edad", "telefono" };
 
 	/**
 	 * Constructor sin argumentos
@@ -102,7 +103,8 @@ public class Cliente {
 	@Override
 	public String toString() {
 		String cadena;
-		cadena=String.format("| %-40.40s | %-40.40s | %-40.40s | %-40.40s | %-40.40d | %-40.40d |", nombre, apellido, dni, domicilio, edad, telefono);
+		cadena = String.format("| %-40.40s | %-40.40s | %-10s | %-40.40s | %-4d | %-13d |", nombre, apellido, dni,
+				domicilio, edad, telefono);
 		return cadena;
 	}
 
@@ -165,7 +167,7 @@ public class Cliente {
 			expresion = "\\d{9}$";
 			break;
 		case "menu":
-			expresion = "[1-5]{1}";
+			expresion = "[1-6]{1}";
 			break;
 		}
 		return expresion;
@@ -178,8 +180,8 @@ public class Cliente {
 	 * @param dato      El valor que se desea asignar
 	 * @return Devuelve true si se ha podido asignar el valor y false en caso
 	 *         contrario
-	 * @throws Exception Lanza una excepción cuando el usuario ha introducido un
-	 *                   valor que no se acepta para ese campo
+	 * @throws Exception Cuando el usuario ha introducido un valor que no se acepta
+	 *                   para ese campo
 	 */
 	public boolean set(String parametro, String dato) throws Exception {
 		boolean correcto = false;

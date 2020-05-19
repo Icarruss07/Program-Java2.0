@@ -18,8 +18,10 @@ public class ConjuntoClientes {
 	 * 
 	 * @param entrada Los datos del cliente
 	 * @param cliente El cliente
-	 * @throws Exception Lanza una excepción cuando el usuario introduce datos incorrectos
+	 * @throws Exception Lanza una excepción cuando el usuario introduce datos
+	 *                   incorrectos
 	 */
+	@SuppressWarnings("static-access")
 	public void agregar(Scanner entrada, Cliente cliente) throws Exception {
 		boolean correcto;
 		String parametro = " ";
@@ -37,15 +39,16 @@ public class ConjuntoClientes {
 	 * Muestra todos los datos de todos los clientes
 	 */
 	public void mostrarTodo() {
-		System.out.println("| Nombre | Apellido | DNI | Direccion | Edad | Telefono |");
+		System.out.printf("| %-40.40s | %-40.40s | %-10s | %-40.40s | %-4s | %-13s | \n\n", Cliente.campos[0],
+				Cliente.campos[1], Cliente.campos[2], Cliente.campos[3], Cliente.campos[4], Cliente.campos[5]);
 		for (int i = 0; i < clientes.size(); i++) {
 			System.out.println(clientes.get(i).toString());
 		}
 	}
 
 	/**
-	 * Facilita una cadena de texto con los datos del cliente que se encuentra en
-	 * la posición indicada.
+	 * Facilita una cadena de texto con los datos del cliente que se encuentra en la
+	 * posición indicada.
 	 * 
 	 * @param numCliente La posición del cliente en la lista de clientes
 	 * @return Una cadena de texto preparada para ser escrita en el archivo con los
