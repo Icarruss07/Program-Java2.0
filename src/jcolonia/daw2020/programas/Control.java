@@ -341,7 +341,7 @@ public class Control {
 	 */
 	public static void menu() throws Exception {
 		int caso = 0;
-		int caso_salir = 5;
+		int caso_salir = 6;
 		while (caso != caso_salir) {
 
 			String menu = "";
@@ -351,9 +351,10 @@ public class Control {
 			System.out.println();
 			System.out.println("1) Añadir un cliente nuevo");
 			System.out.println("2) Ver datos");
-			System.out.println("3) Eliminar un cliente");
-			System.out.println("4) Eliminar todos los datos");
-			System.out.println("5) Salir del programa");
+			System.out.println("3) Editar datos de un cliente");
+			System.out.println("4) Eliminar un cliente");
+			System.out.println("5) Eliminar todos los datos");
+			System.out.println("6) Salir del programa");
 			System.out.println();
 			menu = entrada.nextLine();
 
@@ -377,15 +378,23 @@ public class Control {
 				}
 				break;
 			case 2:
-				clientes.mostrarTodo();
+				elegirVista();
 				break;
 			case 3:
-				eliminarCliente();
+				try {
+					editarCliente(clientes);
+				} catch (Exception e) {
+					System.out.println();
+					System.err.println(e.getLocalizedMessage());
+				}
 				break;
 			case 4:
-				vaciar(clientes, archivo);
+				eliminarCliente();
 				break;
 			case 5:
+				vaciar(clientes, archivo);
+				break;
+			case 6:
 				escribir(clientes, archivo);
 				System.exit(0);
 				break;
