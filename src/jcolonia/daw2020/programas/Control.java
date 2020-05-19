@@ -102,6 +102,9 @@ public class Control {
 		}
 	}
 
+	/**
+	 * Pide al usuario el DNI del cliente que desea eliminar y lo elimina
+	 */
 	public static void eliminarCliente() {
 
 		String parametro = "";
