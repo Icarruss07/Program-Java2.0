@@ -72,4 +72,42 @@ public class ConjuntoClientes {
 			}
 		}
 	}
+
+	/**
+	 * Si existe un cliente en la lista de clientes que tenga el DNI pasado, lo
+	 * devuelve
+	 * 
+	 * @param dato
+	 * @return El cliente buscado
+	 * @throws Exception Si no existen clientes con ese DNI
+	 */
+	public Cliente buscarCliente(String dato) throws Exception {
+		Cliente cliente = null;
+		for (int i = 0; i < clientes.size(); i++) {
+			if (clientes.get(i).getDni().compareToIgnoreCase(dato) == 0) {
+				cliente = clientes.get(i);
+			}
+		}
+
+		if (cliente == null) {
+			throw new Exception("No existen clientes con ese DNI !");
+		}
+		return cliente;
+	}
+
+	/**
+	 * Busca el cliente indicado por el DNI en la lista y devuelve su index
+	 * 
+	 * @param dato El DNI del cliente
+	 * @return El index
+	 */
+	public int indexClientes(String dato) {
+		int index = 0;
+		for (int i = 0; i < clientes.size(); i++) {
+			if (clientes.get(i).getDni().compareToIgnoreCase(dato) == 0) {
+				index = i;
+			}
+		}
+		return index;
+	}
 }
