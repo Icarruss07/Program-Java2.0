@@ -118,6 +118,221 @@ public class Control {
 	}
 
 	/**
+	 * Pregunta al usuario si quiere ver todos los datos o buscar un solo cliente
+	 */
+	public static void elegirVista() {
+		String eleccion = "";
+		System.out.println("Desea ver todos los clientes o buscar uno por el DNI ? (1/2) ");
+		eleccion = entrada.nextLine();
+		if (eleccion.compareToIgnoreCase("2") == 0) {
+			try {
+				buscarCliente();
+			} catch (Exception e) {
+				System.out.println();
+				System.err.println(e.getMessage());
+			}
+		} else {
+			clientes.mostrarTodo();
+		}
+	}
+
+	/**
+	 * Pregunta al usuario por un DNI y comprueba si existe un cliente con ese DNI.
+	 * Si existe, devuelve ese cliente y sino muestra un mensaje.
+	 * 
+	 * @throws Exception Si la lista de clientes no contiene el cliente señalado
+	 */
+	public static void buscarCliente() throws Exception {
+		String datoBuscado = "";
+		System.out.println("Introduce el DNI del cliente que desea buscar");
+		datoBuscado = entrada.nextLine();
+		if (cliente.entradaValida("dni", datoBuscado)) {
+			System.out.println(clientes.buscarCliente(datoBuscado).toString());
+		} else {
+			System.err.println("No existen clientes con ese DNI !");
+		}
+	}
+
+	/**
+	 * Pregunta al usuario por un DNI y despues permite cambiar los datos del
+	 * cliente al que pertenece ese DNI.
+	 * 
+	 * @param clientes La lista de clientes
+	 * @throws Exception Cuando el dato nuevo no respeta las normas exigidas por las
+	 *                   expresiones regulares
+	 */
+	public static void editarCliente(ConjuntoClientes clientes) throws Exception {
+		String datoBuscado = "";
+		String campo = "";
+		String datoViejo = "";
+		String datoNuevo = "";
+		int caso = 0;
+
+		System.out.println();
+		System.out.println("Introduce el DNI del cliente que desea editar");
+		datoBuscado = entrada.nextLine();
+
+		if (cliente.entradaValida("dni", datoBuscado)) {
+
+			System.out.println();
+			System.out.println(clientes.buscarCliente(datoBuscado).toString());
+			System.out.println();
+			System.out.println("Que datos quiere cambiar ? Elije una de las siquientes");
+			System.out.println();
+			System.out.println("1) El nombre");
+			System.out.println("2) El apellido");
+			System.out.println("3) El DNI");
+			System.out.println("4) El domicilio");
+			System.out.println("5) La edad");
+			System.out.println("6) El teléfono");
+			System.out.println();
+
+			campo = entrada.nextLine();
+			System.out.println();
+
+			try {
+				if (cliente.entradaValida("menu", campo)) {
+					caso = Integer.parseInt(campo) - 1;
+				} else {
+					throw new Exception("\nSolo numeros del 1 a 5");
+				}
+			} catch (Exception e) {
+				System.err.println(e.getMessage());
+			}
+
+			switch (caso) {
+
+			case 0:
+
+				System.out.printf("Introduce el nuevo %s \n", Cliente.campos[caso]);
+				datoViejo = cliente.get(Cliente.campos[0]);
+				System.out.println(datoViejo);
+				datoNuevo = entrada.nextLine();
+				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
+					try {
+						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
+						System.out.println("Datos cambiados con éxito !");
+					} catch (Exception e) {
+						System.err.println(e.getLocalizedMessage());
+					}
+				} else {
+					throw new Exception(Cliente.campos[caso] + " incorrecto !");
+				}
+				break;
+
+			case 1:
+
+				System.out.printf("Introduce el nuevo %s \n", Cliente.campos[caso]);
+				datoViejo = cliente.get(Cliente.campos[0]);
+				System.out.println(datoViejo);
+				datoNuevo = entrada.nextLine();
+				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
+					try {
+						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
+						System.out.println("Datos cambiados con éxito !");
+					} catch (Exception e) {
+						System.err.println(e.getLocalizedMessage());
+					}
+				} else {
+					throw new Exception(Cliente.campos[caso] + " incorrecto !");
+				}
+				break;
+
+			case 2:
+
+				System.out.printf("Introduce el nuevo %s \n", Cliente.campos[caso]);
+				datoViejo = cliente.get(Cliente.campos[0]);
+				System.out.println(datoViejo);
+				datoNuevo = entrada.nextLine();
+				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
+					try {
+						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
+						System.out.println("Datos cambiados con éxito !");
+					} catch (Exception e) {
+						System.err.println(e.getLocalizedMessage());
+					}
+				} else {
+					throw new Exception(Cliente.campos[caso] + " incorrecto !");
+				}
+				break;
+
+			case 3:
+
+				System.out.printf("Introduce el nuevo %s \n", Cliente.campos[caso]);
+				datoViejo = cliente.get(Cliente.campos[0]);
+				System.out.println(datoViejo);
+				datoNuevo = entrada.nextLine();
+				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
+					try {
+						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
+						System.out.println("Datos cambiados con éxito !");
+					} catch (Exception e) {
+						System.err.println(e.getLocalizedMessage());
+					}
+				} else {
+					throw new Exception(Cliente.campos[caso] + " incorrecto !");
+				}
+				break;
+
+			case 4:
+
+				System.out.printf("Introduce el nuevo %s \n", Cliente.campos[caso]);
+				datoViejo = cliente.get(Cliente.campos[0]);
+				System.out.println(datoViejo);
+				datoNuevo = entrada.nextLine();
+				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
+					try {
+						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
+						System.out.println("Datos cambiados con éxito !");
+					} catch (Exception e) {
+						System.err.println(e.getLocalizedMessage());
+					}
+				} else {
+					throw new Exception(Cliente.campos[caso] + " incorrecto !");
+				}
+				break;
+
+			case 5:
+
+				System.out.printf("Introduce la nueva %s \n", Cliente.campos[caso]);
+				datoViejo = cliente.get(Cliente.campos[0]);
+				System.out.println(datoViejo);
+				datoNuevo = entrada.nextLine();
+				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
+					try {
+						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
+						System.out.println("Datos cambiados con éxito !");
+					} catch (Exception e) {
+						System.err.println(e.getLocalizedMessage());
+					}
+				} else {
+					throw new Exception(Cliente.campos[caso] + " incorrecta !");
+				}
+				break;
+
+			case 6:
+
+				System.out.printf("Introduce el nuevo %s \n", Cliente.campos[caso]);
+				datoViejo = cliente.get(Cliente.campos[0]);
+				System.out.println(datoViejo);
+				datoNuevo = entrada.nextLine();
+				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
+					try {
+						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
+						System.out.println("Datos cambiados con éxito !");
+					} catch (Exception e) {
+						System.err.println(e.getLocalizedMessage());
+					}
+				} else {
+					throw new Exception(Cliente.campos[caso] + " incorrecto !");
+				}
+				break;
+
+			}
+		}
+	}
+
+	/**
 	 * El menú de la aplicación, pide al usuario elegir entre una de las opciones
 	 * ofrecidas, el usuario solo puede elegír entre una de las opciones ofrecidas,
 	 * según la opción elegida, el programa llama un método u otro.
