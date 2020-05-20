@@ -167,13 +167,16 @@ public class Control {
 		String datoViejo = "";
 		String datoNuevo = "";
 		int caso = 0;
+		int index = 0;
 
 		System.out.println();
 		System.out.println("Introduce el DNI del cliente que desea editar");
 		datoBuscado = entrada.nextLine();
 
 		if (cliente.entradaValida("dni", datoBuscado)) {
-
+			
+			index=clientes.indexClientes(datoBuscado);
+			
 			System.out.println();
 			System.out.println(clientes.buscarCliente(datoBuscado).toString());
 			System.out.println();
@@ -205,9 +208,10 @@ public class Control {
 			case 0:
 
 				System.out.printf("Introduce el nuevo %s \n", Cliente.campos[caso]);
-				datoViejo = cliente.get(Cliente.campos[0]);
-				System.out.println(datoViejo);
-				datoNuevo = entrada.nextLine();
+				datoViejo = clientes.clientes.get(index).get(Cliente.campos[caso]);
+				System.out.printf("El %s viejo : %s \n", Cliente.campos[caso], datoViejo);
+				System.out.printf("El %s nuevo : ", Cliente.campos[caso]);
+				datoNuevo = entrada.next();
 				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
 					try {
 						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
@@ -223,9 +227,10 @@ public class Control {
 			case 1:
 
 				System.out.printf("Introduce el nuevo %s \n", Cliente.campos[caso]);
-				datoViejo = cliente.get(Cliente.campos[0]);
-				System.out.println(datoViejo);
-				datoNuevo = entrada.nextLine();
+				datoViejo = clientes.clientes.get(index).get(Cliente.campos[caso]);
+				System.out.printf("El %s viejo : %s \n", Cliente.campos[caso], datoViejo);
+				System.out.printf("El %s nuevo : ", Cliente.campos[caso]);
+				datoNuevo = entrada.next();
 				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
 					try {
 						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
@@ -241,9 +246,10 @@ public class Control {
 			case 2:
 
 				System.out.printf("Introduce el nuevo %s \n", Cliente.campos[caso]);
-				datoViejo = cliente.get(Cliente.campos[0]);
-				System.out.println(datoViejo);
-				datoNuevo = entrada.nextLine();
+				datoViejo = clientes.clientes.get(index).get(Cliente.campos[caso]);
+				System.out.printf("El %s viejo : %s \n", Cliente.campos[caso], datoViejo);
+				System.out.printf("El %s nuevo : ", Cliente.campos[caso]);
+				datoNuevo = entrada.next();
 				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
 					try {
 						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
@@ -255,13 +261,14 @@ public class Control {
 					throw new Exception(Cliente.campos[caso] + " incorrecto !");
 				}
 				break;
-
+				
 			case 3:
 
 				System.out.printf("Introduce el nuevo %s \n", Cliente.campos[caso]);
-				datoViejo = cliente.get(Cliente.campos[0]);
-				System.out.println(datoViejo);
-				datoNuevo = entrada.nextLine();
+				datoViejo = clientes.clientes.get(index).get(Cliente.campos[caso]);
+				System.out.printf("El %s viejo : %s \n", Cliente.campos[caso], datoViejo);
+				System.out.printf("El %s nuevo : ", Cliente.campos[caso]);
+				datoNuevo = entrada.next();
 				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
 					try {
 						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
@@ -277,9 +284,10 @@ public class Control {
 			case 4:
 
 				System.out.printf("Introduce el nuevo %s \n", Cliente.campos[caso]);
-				datoViejo = cliente.get(Cliente.campos[0]);
-				System.out.println(datoViejo);
-				datoNuevo = entrada.nextLine();
+				datoViejo = clientes.clientes.get(index).get(Cliente.campos[caso]);
+				System.out.printf("El %s viejo : %s \n", Cliente.campos[caso], datoViejo);
+				System.out.printf("El %s nuevo : ", Cliente.campos[caso]);
+				datoNuevo = entrada.next();
 				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
 					try {
 						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
@@ -294,10 +302,11 @@ public class Control {
 
 			case 5:
 
-				System.out.printf("Introduce la nueva %s \n", Cliente.campos[caso]);
-				datoViejo = cliente.get(Cliente.campos[0]);
-				System.out.println(datoViejo);
-				datoNuevo = entrada.nextLine();
+				System.out.printf("Introduce el nuevo %s \n", Cliente.campos[caso]);
+				datoViejo = clientes.clientes.get(index).get(Cliente.campos[caso]);
+				System.out.printf("El %s viejo : %s \n", Cliente.campos[caso], datoViejo);
+				System.out.printf("El %s nuevo : ", Cliente.campos[caso]);
+				datoNuevo = entrada.next();
 				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
 					try {
 						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
@@ -306,16 +315,17 @@ public class Control {
 						System.err.println(e.getLocalizedMessage());
 					}
 				} else {
-					throw new Exception(Cliente.campos[caso] + " incorrecta !");
+					throw new Exception(Cliente.campos[caso] + " incorrecto !");
 				}
 				break;
 
 			case 6:
 
 				System.out.printf("Introduce el nuevo %s \n", Cliente.campos[caso]);
-				datoViejo = cliente.get(Cliente.campos[0]);
-				System.out.println(datoViejo);
-				datoNuevo = entrada.nextLine();
+				datoViejo = clientes.clientes.get(index).get(Cliente.campos[caso]);
+				System.out.printf("El %s viejo : %s \n", Cliente.campos[caso], datoViejo);
+				System.out.printf("El %s nuevo : ", Cliente.campos[caso]);
+				datoNuevo = entrada.next();
 				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
 					try {
 						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
