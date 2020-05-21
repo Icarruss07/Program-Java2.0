@@ -1,4 +1,4 @@
-@mode con cp select=65001 > NUL
+@CHCP 65001 > NUL
 @ECHO off
 
 ECHO Ejecutando Programa Clientes
