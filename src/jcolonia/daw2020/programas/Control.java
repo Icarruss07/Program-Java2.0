@@ -347,9 +347,8 @@ public class Control {
 	 * ofrecidas, el usuario solo puede elegír entre una de las opciones ofrecidas,
 	 * según la opción elegida, el programa llama un método u otro.
 	 * 
-	 * @throws IOException
 	 */
-	public static void menu() throws Exception {
+	public static void menu() {
 		int caso = 0;
 		int caso_salir = 6;
 		while (caso != caso_salir) {
@@ -405,7 +404,11 @@ public class Control {
 				vaciar(clientes, archivo);
 				break;
 			case 6:
+				try {
 				escribir(clientes, archivo);
+				} catch (Exception e) {
+					System.err.println(e.getLocalizedMessage());
+				}
 				System.exit(0);
 				break;
 

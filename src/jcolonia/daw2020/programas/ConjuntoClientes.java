@@ -62,7 +62,7 @@ public class ConjuntoClientes {
 	 * Busca en la lista de clientes el dato indicado, si lo encuentra elimina ese
 	 * cliente.
 	 * 
-	 * @param parametro El DNI del cliente buscado
+	 * @param dni El DNI del cliente buscado
 	 */
 	public void eliminar(String dni) {
 		for (int i = 0; i < clientes.size(); i++) {
@@ -77,7 +77,7 @@ public class ConjuntoClientes {
 	 * Si existe un cliente en la lista de clientes que tenga el DNI pasado, lo
 	 * devuelve
 	 * 
-	 * @param dato
+	 * @param dato El DNI del cliente a buscar
 	 * @return El cliente buscado
 	 * @throws Exception Si no existen clientes con ese DNI
 	 */
