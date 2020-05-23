@@ -176,6 +176,7 @@ public class Control {
 		if (cliente.entradaValida("dni", datoBuscado)) {
 			
 			index=clientes.indexClientes(datoBuscado);
+			campo="";
 			
 			System.out.println();
 			System.out.println(clientes.buscarCliente(datoBuscado).toString());
@@ -197,7 +198,7 @@ public class Control {
 				if (cliente.entradaValida("menu", campo)) {
 					caso = Integer.parseInt(campo) - 1;
 				} else {
-					throw new Exception("\nSolo numeros del 1 a 5");
+					throw new Exception("\nSolo numeros del 1 a 6");
 				}
 			} catch (Exception e) {
 				System.err.println(e.getMessage());
@@ -211,11 +212,11 @@ public class Control {
 				datoViejo = clientes.clientes.get(index).get(Cliente.campos[caso]);
 				System.out.printf("El %s viejo : %s \n", Cliente.campos[caso], datoViejo);
 				System.out.printf("El %s nuevo : ", Cliente.campos[caso]);
-				datoNuevo = entrada.next();
+				datoNuevo = entrada.nextLine();
 				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
 					try {
 						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
-						System.out.println("Datos cambiados con éxito !");
+						System.out.println("\nDatos cambiados con éxito !");
 					} catch (Exception e) {
 						System.err.println(e.getLocalizedMessage());
 					}
@@ -249,11 +250,11 @@ public class Control {
 				datoViejo = clientes.clientes.get(index).get(Cliente.campos[caso]);
 				System.out.printf("El %s viejo : %s \n", Cliente.campos[caso], datoViejo);
 				System.out.printf("El %s nuevo : ", Cliente.campos[caso]);
-				datoNuevo = entrada.next();
+				datoNuevo = entrada.nextLine();
 				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
 					try {
 						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
-						System.out.println("Datos cambiados con éxito !");
+						System.out.println("\nDatos cambiados con éxito !");
 					} catch (Exception e) {
 						System.err.println(e.getLocalizedMessage());
 					}
@@ -268,11 +269,11 @@ public class Control {
 				datoViejo = clientes.clientes.get(index).get(Cliente.campos[caso]);
 				System.out.printf("El %s viejo : %s \n", Cliente.campos[caso], datoViejo);
 				System.out.printf("El %s nuevo : ", Cliente.campos[caso]);
-				datoNuevo = entrada.next();
+				datoNuevo = entrada.nextLine();
 				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
 					try {
 						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
-						System.out.println("Datos cambiados con éxito !");
+						System.out.println("\nDatos cambiados con éxito !");
 					} catch (Exception e) {
 						System.err.println(e.getLocalizedMessage());
 					}
@@ -287,11 +288,11 @@ public class Control {
 				datoViejo = clientes.clientes.get(index).get(Cliente.campos[caso]);
 				System.out.printf("El %s viejo : %s \n", Cliente.campos[caso], datoViejo);
 				System.out.printf("El %s nuevo : ", Cliente.campos[caso]);
-				datoNuevo = entrada.next();
+				datoNuevo = entrada.nextLine();
 				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
 					try {
 						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
-						System.out.println("Datos cambiados con éxito !");
+						System.out.println("\nDatos cambiados con éxito !");
 					} catch (Exception e) {
 						System.err.println(e.getLocalizedMessage());
 					}
@@ -306,11 +307,11 @@ public class Control {
 				datoViejo = clientes.clientes.get(index).get(Cliente.campos[caso]);
 				System.out.printf("El %s viejo : %s \n", Cliente.campos[caso], datoViejo);
 				System.out.printf("El %s nuevo : ", Cliente.campos[caso]);
-				datoNuevo = entrada.next();
+				datoNuevo = entrada.nextLine();
 				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
 					try {
 						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
-						System.out.println("Datos cambiados con éxito !");
+						System.out.println("\nDatos cambiados con éxito !");
 					} catch (Exception e) {
 						System.err.println(e.getLocalizedMessage());
 					}
@@ -325,11 +326,11 @@ public class Control {
 				datoViejo = clientes.clientes.get(index).get(Cliente.campos[caso]);
 				System.out.printf("El %s viejo : %s \n", Cliente.campos[caso], datoViejo);
 				System.out.printf("El %s nuevo : ", Cliente.campos[caso]);
-				datoNuevo = entrada.next();
+				datoNuevo = entrada.nextLine();
 				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
 					try {
 						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
-						System.out.println("Datos cambiados con éxito !");
+						System.out.println("\nDatos cambiados con éxito !");
 					} catch (Exception e) {
 						System.err.println(e.getLocalizedMessage());
 					}
@@ -371,7 +372,7 @@ public class Control {
 				if (cliente.entradaValida("menu", menu)) {
 					caso = Integer.parseInt(menu);
 				} else {
-					throw new Exception("\nSolo numeros del 1 a 5");
+					throw new Exception("\nSolo numeros del 1 a 6");
 				}
 			} catch (Exception e) {
 				System.err.println(e.getMessage());
