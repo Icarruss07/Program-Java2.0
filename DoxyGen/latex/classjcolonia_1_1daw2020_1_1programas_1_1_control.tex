@@ -1,0 +1,91 @@
+\hypertarget{classjcolonia_1_1daw2020_1_1programas_1_1_control}{}\doxysection{jcolonia.\+daw2020.\+programas.\+Control Class Reference}
+\label{classjcolonia_1_1daw2020_1_1programas_1_1_control}\index{jcolonia.daw2020.programas.Control@{jcolonia.daw2020.programas.Control}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classjcolonia_1_1daw2020_1_1programas_1_1_control_a544cf6a6e81bfb2e2b3efe9b66557ed7}\label{classjcolonia_1_1daw2020_1_1programas_1_1_control_a544cf6a6e81bfb2e2b3efe9b66557ed7}} 
+static void {\bfseries main} (String\mbox{[}$\,$\mbox{]} args)  throws Exception 
+\item 
+static void \mbox{\hyperlink{classjcolonia_1_1daw2020_1_1programas_1_1_control_a8820457f7124a737592cb801abe66303}{leer\+Archivo}} ()
+\item 
+static void \mbox{\hyperlink{classjcolonia_1_1daw2020_1_1programas_1_1_control_a5769afab72e3b2ba42077f8c44f65f06}{eliminar\+Cliente}} ()
+\item 
+static void \mbox{\hyperlink{classjcolonia_1_1daw2020_1_1programas_1_1_control_aa6b1c3b84b52038d809e215805040c0a}{elegir\+Vista}} ()
+\item 
+static void \mbox{\hyperlink{classjcolonia_1_1daw2020_1_1programas_1_1_control_af46c020a7d17d27260acf3126bcbcf01}{buscar\+Cliente}} ()  throws Exception 
+\item 
+static void \mbox{\hyperlink{classjcolonia_1_1daw2020_1_1programas_1_1_control_aad615488919e0a8d04c1e449802cc903}{editar\+Cliente}} (\mbox{\hyperlink{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes}{Conjunto\+Clientes}} clientes)  throws Exception 
+\item 
+static void \mbox{\hyperlink{classjcolonia_1_1daw2020_1_1programas_1_1_control_a6be6dc283b710638a83dc7d890915101}{menu}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que controla las operaciones relativas al archivo que contiene los datos y tambien el método main con un menú
+
+\begin{DoxyAuthor}{Author}
+Simón Marc 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classjcolonia_1_1daw2020_1_1programas_1_1_control_af46c020a7d17d27260acf3126bcbcf01}\label{classjcolonia_1_1daw2020_1_1programas_1_1_control_af46c020a7d17d27260acf3126bcbcf01}} 
+\index{jcolonia.daw2020.programas.Control@{jcolonia.daw2020.programas.Control}!buscarCliente@{buscarCliente}}
+\index{buscarCliente@{buscarCliente}!jcolonia.daw2020.programas.Control@{jcolonia.daw2020.programas.Control}}
+\doxysubsubsection{\texorpdfstring{buscarCliente()}{buscarCliente()}}
+{\footnotesize\ttfamily static void jcolonia.\+daw2020.\+programas.\+Control.\+buscar\+Cliente (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+Pregunta al usuario por un D\+NI y comprueba si existe un cliente con ese D\+NI. Si existe, devuelve ese cliente y sino muestra un mensaje.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & Si la lista de clientes no contiene el cliente señalado \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classjcolonia_1_1daw2020_1_1programas_1_1_control_aad615488919e0a8d04c1e449802cc903}\label{classjcolonia_1_1daw2020_1_1programas_1_1_control_aad615488919e0a8d04c1e449802cc903}} 
+\index{jcolonia.daw2020.programas.Control@{jcolonia.daw2020.programas.Control}!editarCliente@{editarCliente}}
+\index{editarCliente@{editarCliente}!jcolonia.daw2020.programas.Control@{jcolonia.daw2020.programas.Control}}
+\doxysubsubsection{\texorpdfstring{editarCliente()}{editarCliente()}}
+{\footnotesize\ttfamily static void jcolonia.\+daw2020.\+programas.\+Control.\+editar\+Cliente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes}{Conjunto\+Clientes}}}]{clientes }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+Pregunta al usuario por un D\+NI y despues permite cambiar los datos del cliente al que pertenece ese D\+NI.
+
+
+\begin{DoxyParams}{Parameters}
+{\em clientes} & La lista de clientes \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & Cuando el dato nuevo no respeta las normas exigidas por las expresiones regulares \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classjcolonia_1_1daw2020_1_1programas_1_1_control_aa6b1c3b84b52038d809e215805040c0a}\label{classjcolonia_1_1daw2020_1_1programas_1_1_control_aa6b1c3b84b52038d809e215805040c0a}} 
+\index{jcolonia.daw2020.programas.Control@{jcolonia.daw2020.programas.Control}!elegirVista@{elegirVista}}
+\index{elegirVista@{elegirVista}!jcolonia.daw2020.programas.Control@{jcolonia.daw2020.programas.Control}}
+\doxysubsubsection{\texorpdfstring{elegirVista()}{elegirVista()}}
+{\footnotesize\ttfamily static void jcolonia.\+daw2020.\+programas.\+Control.\+elegir\+Vista (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Pregunta al usuario si quiere ver todos los datos o buscar un solo cliente \mbox{\Hypertarget{classjcolonia_1_1daw2020_1_1programas_1_1_control_a5769afab72e3b2ba42077f8c44f65f06}\label{classjcolonia_1_1daw2020_1_1programas_1_1_control_a5769afab72e3b2ba42077f8c44f65f06}} 
+\index{jcolonia.daw2020.programas.Control@{jcolonia.daw2020.programas.Control}!eliminarCliente@{eliminarCliente}}
+\index{eliminarCliente@{eliminarCliente}!jcolonia.daw2020.programas.Control@{jcolonia.daw2020.programas.Control}}
+\doxysubsubsection{\texorpdfstring{eliminarCliente()}{eliminarCliente()}}
+{\footnotesize\ttfamily static void jcolonia.\+daw2020.\+programas.\+Control.\+eliminar\+Cliente (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Pide al usuario el D\+NI del cliente que desea eliminar y lo elimina \mbox{\Hypertarget{classjcolonia_1_1daw2020_1_1programas_1_1_control_a8820457f7124a737592cb801abe66303}\label{classjcolonia_1_1daw2020_1_1programas_1_1_control_a8820457f7124a737592cb801abe66303}} 
+\index{jcolonia.daw2020.programas.Control@{jcolonia.daw2020.programas.Control}!leerArchivo@{leerArchivo}}
+\index{leerArchivo@{leerArchivo}!jcolonia.daw2020.programas.Control@{jcolonia.daw2020.programas.Control}}
+\doxysubsubsection{\texorpdfstring{leerArchivo()}{leerArchivo()}}
+{\footnotesize\ttfamily static void jcolonia.\+daw2020.\+programas.\+Control.\+leer\+Archivo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Añade al programa los datos del archivo \mbox{\Hypertarget{classjcolonia_1_1daw2020_1_1programas_1_1_control_a6be6dc283b710638a83dc7d890915101}\label{classjcolonia_1_1daw2020_1_1programas_1_1_control_a6be6dc283b710638a83dc7d890915101}} 
+\index{jcolonia.daw2020.programas.Control@{jcolonia.daw2020.programas.Control}!menu@{menu}}
+\index{menu@{menu}!jcolonia.daw2020.programas.Control@{jcolonia.daw2020.programas.Control}}
+\doxysubsubsection{\texorpdfstring{menu()}{menu()}}
+{\footnotesize\ttfamily static void jcolonia.\+daw2020.\+programas.\+Control.\+menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+El menú de la aplicación, pide al usuario elegir entre una de las opciones ofrecidas, el usuario solo puede elegír entre una de las opciones ofrecidas, según la opción elegida, el programa llama un método u otro. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/jcolonia/daw2020/programas/Control.\+java\end{DoxyCompactItemize}

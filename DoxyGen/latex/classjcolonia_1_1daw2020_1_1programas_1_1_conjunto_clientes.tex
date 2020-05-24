@@ -1,0 +1,125 @@
+\hypertarget{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes}{}\doxysection{jcolonia.\+daw2020.\+programas.\+Conjunto\+Clientes Class Reference}
+\label{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes}\index{jcolonia.daw2020.programas.ConjuntoClientes@{jcolonia.daw2020.programas.ConjuntoClientes}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes_af605118fbf30af84d5fd077356125c2b}{agregar}} (Scanner entrada, \mbox{\hyperlink{classjcolonia_1_1daw2020_1_1programas_1_1_cliente}{Cliente}} cliente)  throws Exception 
+\item 
+void \mbox{\hyperlink{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes_a192cc60836adf41bc3795f9cde572728}{mostrar\+Todo}} ()
+\item 
+String \mbox{\hyperlink{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes_acc7480eb57c861b10ab199849616870b}{listar}} (int num\+Cliente)
+\item 
+void \mbox{\hyperlink{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes_a635531b93d5f00404bb7f1c3a66405b3}{eliminar}} (String dni)
+\item 
+\mbox{\hyperlink{classjcolonia_1_1daw2020_1_1programas_1_1_cliente}{Cliente}} \mbox{\hyperlink{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes_a3fd2b056224f40a16470d58cbc10a46b}{buscar\+Cliente}} (String dato)  throws Exception 
+\item 
+int \mbox{\hyperlink{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes_ad39b62d8e0a23a49d808fa500e026898}{index\+Clientes}} (String dato)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que contiene el conjunto entero de clientes y los métodos relativos a dicho conjunto.
+
+\begin{DoxyAuthor}{Author}
+Simón Marc 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes_af605118fbf30af84d5fd077356125c2b}\label{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes_af605118fbf30af84d5fd077356125c2b}} 
+\index{jcolonia.daw2020.programas.ConjuntoClientes@{jcolonia.daw2020.programas.ConjuntoClientes}!agregar@{agregar}}
+\index{agregar@{agregar}!jcolonia.daw2020.programas.ConjuntoClientes@{jcolonia.daw2020.programas.ConjuntoClientes}}
+\doxysubsubsection{\texorpdfstring{agregar()}{agregar()}}
+{\footnotesize\ttfamily void jcolonia.\+daw2020.\+programas.\+Conjunto\+Clientes.\+agregar (\begin{DoxyParamCaption}\item[{Scanner}]{entrada,  }\item[{\mbox{\hyperlink{classjcolonia_1_1daw2020_1_1programas_1_1_cliente}{Cliente}}}]{cliente }\end{DoxyParamCaption}) throws Exception}
+
+Añade un cliente a la lista de clientes
+
+
+\begin{DoxyParams}{Parameters}
+{\em entrada} & Los datos del cliente \\
+\hline
+{\em cliente} & El cliente \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & Lanza una excepción cuando el usuario introduce datos incorrectos \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes_a3fd2b056224f40a16470d58cbc10a46b}\label{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes_a3fd2b056224f40a16470d58cbc10a46b}} 
+\index{jcolonia.daw2020.programas.ConjuntoClientes@{jcolonia.daw2020.programas.ConjuntoClientes}!buscarCliente@{buscarCliente}}
+\index{buscarCliente@{buscarCliente}!jcolonia.daw2020.programas.ConjuntoClientes@{jcolonia.daw2020.programas.ConjuntoClientes}}
+\doxysubsubsection{\texorpdfstring{buscarCliente()}{buscarCliente()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classjcolonia_1_1daw2020_1_1programas_1_1_cliente}{Cliente}} jcolonia.\+daw2020.\+programas.\+Conjunto\+Clientes.\+buscar\+Cliente (\begin{DoxyParamCaption}\item[{String}]{dato }\end{DoxyParamCaption}) throws Exception}
+
+Si existe un cliente en la lista de clientes que tenga el D\+NI pasado, lo devuelve
+
+
+\begin{DoxyParams}{Parameters}
+{\em dato} & El D\+NI del cliente a buscar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+El cliente buscado 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & Si no existen clientes con ese D\+NI \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes_a635531b93d5f00404bb7f1c3a66405b3}\label{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes_a635531b93d5f00404bb7f1c3a66405b3}} 
+\index{jcolonia.daw2020.programas.ConjuntoClientes@{jcolonia.daw2020.programas.ConjuntoClientes}!eliminar@{eliminar}}
+\index{eliminar@{eliminar}!jcolonia.daw2020.programas.ConjuntoClientes@{jcolonia.daw2020.programas.ConjuntoClientes}}
+\doxysubsubsection{\texorpdfstring{eliminar()}{eliminar()}}
+{\footnotesize\ttfamily void jcolonia.\+daw2020.\+programas.\+Conjunto\+Clientes.\+eliminar (\begin{DoxyParamCaption}\item[{String}]{dni }\end{DoxyParamCaption})}
+
+Busca en la lista de clientes el dato indicado, si lo encuentra elimina ese cliente.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dni} & El D\+NI del cliente buscado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes_ad39b62d8e0a23a49d808fa500e026898}\label{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes_ad39b62d8e0a23a49d808fa500e026898}} 
+\index{jcolonia.daw2020.programas.ConjuntoClientes@{jcolonia.daw2020.programas.ConjuntoClientes}!indexClientes@{indexClientes}}
+\index{indexClientes@{indexClientes}!jcolonia.daw2020.programas.ConjuntoClientes@{jcolonia.daw2020.programas.ConjuntoClientes}}
+\doxysubsubsection{\texorpdfstring{indexClientes()}{indexClientes()}}
+{\footnotesize\ttfamily int jcolonia.\+daw2020.\+programas.\+Conjunto\+Clientes.\+index\+Clientes (\begin{DoxyParamCaption}\item[{String}]{dato }\end{DoxyParamCaption})}
+
+Busca el cliente indicado por el D\+NI en la lista y devuelve su index
+
+
+\begin{DoxyParams}{Parameters}
+{\em dato} & El D\+NI del cliente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+El index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes_acc7480eb57c861b10ab199849616870b}\label{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes_acc7480eb57c861b10ab199849616870b}} 
+\index{jcolonia.daw2020.programas.ConjuntoClientes@{jcolonia.daw2020.programas.ConjuntoClientes}!listar@{listar}}
+\index{listar@{listar}!jcolonia.daw2020.programas.ConjuntoClientes@{jcolonia.daw2020.programas.ConjuntoClientes}}
+\doxysubsubsection{\texorpdfstring{listar()}{listar()}}
+{\footnotesize\ttfamily String jcolonia.\+daw2020.\+programas.\+Conjunto\+Clientes.\+listar (\begin{DoxyParamCaption}\item[{int}]{num\+Cliente }\end{DoxyParamCaption})}
+
+Facilita una cadena de texto con los datos del cliente que se encuentra en la posición indicada.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Cliente} & La posición del cliente en la lista de clientes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una cadena de texto preparada para ser escrita en el archivo con los datos de ese cliente 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes_a192cc60836adf41bc3795f9cde572728}\label{classjcolonia_1_1daw2020_1_1programas_1_1_conjunto_clientes_a192cc60836adf41bc3795f9cde572728}} 
+\index{jcolonia.daw2020.programas.ConjuntoClientes@{jcolonia.daw2020.programas.ConjuntoClientes}!mostrarTodo@{mostrarTodo}}
+\index{mostrarTodo@{mostrarTodo}!jcolonia.daw2020.programas.ConjuntoClientes@{jcolonia.daw2020.programas.ConjuntoClientes}}
+\doxysubsubsection{\texorpdfstring{mostrarTodo()}{mostrarTodo()}}
+{\footnotesize\ttfamily void jcolonia.\+daw2020.\+programas.\+Conjunto\+Clientes.\+mostrar\+Todo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Muestra todos los datos de todos los clientes 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/jcolonia/daw2020/programas/Conjunto\+Clientes.\+java\end{DoxyCompactItemize}
