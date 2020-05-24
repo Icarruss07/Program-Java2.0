@@ -111,7 +111,7 @@ public class Control {
 		System.out.print("Introduce el DNI del cliente que desea eliminar : ");
 		parametro = entrada.nextLine();
 
-		if (cliente.entradaValida("dni", parametro)) {
+		if (cliente.entradaValida("dni", parametro) || cliente.entradaValida("nie", parametro)) {
 			clientes.eliminar(parametro);
 		}
 
@@ -146,7 +146,7 @@ public class Control {
 		String datoBuscado = "";
 		System.out.println("Introduce el DNI del cliente que desea buscar");
 		datoBuscado = entrada.nextLine();
-		if (cliente.entradaValida("dni", datoBuscado)) {
+		if (cliente.entradaValida("dni", datoBuscado) || cliente.entradaValida("nie", datoBuscado)) {
 			System.out.println(clientes.buscarCliente(datoBuscado).toString());
 		} else {
 			System.err.println("No existen clientes con ese DNI !");
@@ -173,7 +173,7 @@ public class Control {
 		System.out.println("Introduce el DNI del cliente que desea editar");
 		datoBuscado = entrada.nextLine();
 
-		if (cliente.entradaValida("dni", datoBuscado)) {
+		if (cliente.entradaValida("dni", datoBuscado) || cliente.entradaValida("nie", datoBuscado)) {
 			
 			index=clientes.indexClientes(datoBuscado);
 			campo="";

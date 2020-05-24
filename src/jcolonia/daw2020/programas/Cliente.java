@@ -158,7 +158,10 @@ public class Cliente {
 			expresion = "([a-zA-ZÄ-ÿ]{2,50}\\s*){1,5}";
 			break;
 		case "dni":
-			expresion = "[a-zA-Z]*[\\d]{7,8}[a-zA-Z]{1}";
+			expresion = "[\\d]{8}[a-zA-Z]{1}";
+			break;
+		case "nie":
+			expresion = "[a-zA-Z]{1}[\\d]{7}[a-zA-Z]{1}";
 			break;
 		case "edad":
 			expresion = "[1-9]{1}[0-9]{0,1}";
@@ -204,7 +207,7 @@ public class Cliente {
 				}
 				break;
 			case "dni":
-				if (entradaValida(parametro, dato)) {
+				if (entradaValida(parametro, dato) || entradaValida("nie", dato)) {
 					setDni(dato);
 					correcto = true;
 				}
