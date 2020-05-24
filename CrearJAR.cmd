@@ -6,8 +6,7 @@
 
 ECHO Introduce el nombre de salida del JAR
 
-SET /p jar="JAR: "
-
+@SET jar=Programa_Clientes
 @SET main=Control
 @SET nombrepaquete=jcolonia.daw2020.programas
 @SET rutapaquete=jcolonia\daw2020\programas
