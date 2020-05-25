@@ -210,6 +210,8 @@ public class Cliente {
 				if (entradaValida(parametro, dato) || entradaValida("nie", dato)) {
 					setDni(dato);
 					correcto = true;
+				} else {
+					throw new Exception(parametro + " incorrecto!");
 				}
 				break;
 			case "edad":

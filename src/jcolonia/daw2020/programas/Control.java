@@ -269,7 +269,7 @@ public class Control {
 				System.out.printf("El %s viejo : %s \n", Cliente.campos[caso], datoViejo);
 				System.out.printf("El %s nuevo : ", Cliente.campos[caso]);
 				datoNuevo = entrada.nextLine();
-				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo)) {
+				if (cliente.entradaValida(Cliente.campos[caso], datoNuevo) || cliente.entradaValida("nie", datoNuevo)) {
 					try {
 						clientes.clientes.get(clientes.indexClientes(datoBuscado)).set(Cliente.campos[caso], datoNuevo);
 						System.out.println("\nDatos cambiados con éxito !");
