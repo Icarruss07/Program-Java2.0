@@ -29,12 +29,12 @@ public class Cliente {
 	 * Constructor de la clase, crea un objeto de esta clase asignando los valores
 	 * pasados a las variables de la clase.
 	 * 
-	 * @param nombre El nombre
-	 * @param apellido El apellido
-	 * @param dni El DNI
+	 * @param nombre    El nombre
+	 * @param apellido  El apellido
+	 * @param dni       El DNI
 	 * @param domicilio El domicilio
-	 * @param edad La edad
-	 * @param telefono El teléfono
+	 * @param edad      La edad
+	 * @param telefono  El teléfono
 	 */
 	public Cliente(String nombre, String apellido, String dni, String domicilio, String edad, String telefono) {
 		super();

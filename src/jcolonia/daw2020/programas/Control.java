@@ -14,18 +14,36 @@ import java.util.Scanner;
  *
  */
 public class Control {
-	static File archivo = new File("Clientes.csv");
+	static File datos;
+	static File archivo;
 	static Scanner csv;
 	static Scanner entrada = new Scanner(System.in);
 	static Cliente cliente = new Cliente();
 	static ConjuntoClientes clientes = new ConjuntoClientes();
 
 	public static void main(String[] args) throws Exception {
+		definirCarpetaEjecucion();
 		leerArchivo();
 		menu();
 		// todo que tiene que ver con el archivo
 	}
 
+	/**
+	 * Comprueba la carpeta desde la que se ejecuta el programa, si se ejecuta con
+	 * la ayuda del JAR, guardará los datos en una carpeta superior llamada datos,
+	 * de lo contrario en el directorio actual creará una carpeta llamada datos
+	 */
+	static void definirCarpetaEjecucion() {
+		if (System.getProperty("user.dir").contains("dist")) {
+			datos = new File("../datos");
+			archivo = new File("../datos/Clientes.csv");
+		} else {
+			datos = new File("datos");
+			archivo = new File("datos/Clientes.csv");
+		}
+		datos.mkdir();
+	}
+	
 	/**
 	 * Escribe en el archivo que se encuentra en la ruta descrita los datos de los
 	 * clientes existentes en la lista de clientes.
@@ -382,7 +400,7 @@ public class Control {
 
 			case 1:
 				try {
-					clientes.agregar(entrada, cliente);
+					clientes.agregar(entrada);
 				} catch (Exception e) {
 					System.err.println(e.getMessage());
 				}

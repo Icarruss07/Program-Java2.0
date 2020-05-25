@@ -22,7 +22,8 @@ public class ConjuntoClientes {
 	 *                   incorrectos
 	 */
 	@SuppressWarnings("static-access")
-	public void agregar(Scanner entrada, Cliente cliente) throws Exception {
+	public void agregar(Scanner entrada) throws Exception {
+		Cliente cliente = new Cliente();
 		boolean correcto;
 		String parametro = " ";
 		for (int i = 0; i < cliente.campos.length; i++) {
