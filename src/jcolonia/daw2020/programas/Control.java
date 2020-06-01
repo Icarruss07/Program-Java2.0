@@ -19,6 +19,7 @@ public class Control {
 	static Scanner csv;
 	static Scanner entrada = new Scanner(System.in);
 	static Cliente cliente = new Cliente();
+	static Vista vista = new Vista();
 	static ConjuntoClientes clientes = new ConjuntoClientes();
 
 	public static void main(String[] args) throws Exception {
@@ -400,7 +401,8 @@ public class Control {
 
 			case 1:
 				try {
-					clientes.agregar(entrada);
+					cliente = vista.agregarCliente(entrada);
+					clientes.agregar(cliente);
 				} catch (Exception e) {
 					System.err.println(e.getMessage());
 				}

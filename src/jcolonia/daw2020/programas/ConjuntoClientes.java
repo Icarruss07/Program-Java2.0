@@ -21,18 +21,7 @@ public class ConjuntoClientes {
 	 * @throws Exception Lanza una excepción cuando el usuario introduce datos
 	 *                   incorrectos
 	 */
-	@SuppressWarnings("static-access")
-	public void agregar(Scanner entrada) throws Exception {
-		Cliente cliente = new Cliente();
-		boolean correcto;
-		String parametro = " ";
-		for (int i = 0; i < cliente.campos.length; i++) {
-			parametro = cliente.campos[i];
-			do {
-				System.out.printf("%s : ", parametro);
-				correcto = cliente.set(parametro, entrada.nextLine());
-			} while (!correcto);
-		}
+	public void agregar(Cliente cliente) throws Exception {
 		clientes.add(cliente);
 	}
 
