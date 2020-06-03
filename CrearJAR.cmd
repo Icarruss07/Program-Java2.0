@@ -12,12 +12,13 @@ ECHO Introduce el nombre de salida del JAR
 @SET rutapaquete=jcolonia\daw2020\programas
 
 @SET PATH=c:java\jdk11\bin;%PATH%
+@SET PATH=C:\java\Java8\bin;%%
 @SET CLASSPATH=bin
 @SET JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 
 ECHO ---------------
 ECHO.
 
-jar --create --file %jar%.jar --main-class=%nombrepaquete%.%main% -C bin .
+jar cvf %jar%.jar -C bin .
 
 PAUSE

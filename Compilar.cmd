@@ -6,6 +6,7 @@ ECHO ====================
 ECHO.
 
 @SET PATH=c:\java\jdk-11\bin;%PATH%
+@SET PATH=C:\java\Java8\bin;%PATH%
 @SET CLASSPATH=.\bin
 @SET JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 

@@ -1,7 +1,6 @@
 package jcolonia.daw2020.programas;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * Clase que contiene el conjunto entero de clientes y los métodos relativos a
